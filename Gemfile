@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+gem "camaleon_cms", '>= 2.4.3'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.1"
 
@@ -72,3 +74,8 @@ group :test do
 end
 
 gem "dotenv-rails", "~> 2.8"
+
+
+#################### Camaleon CMS include all gems for plugins and themes #################### 
+# require_relative './lib/plugin_routes' 
+# instance_eval(PluginRoutes.draw_gems)
