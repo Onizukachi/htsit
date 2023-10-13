@@ -5,19 +5,31 @@ services:
     build: .
     ports:
       - "3000:3000"
-    volumes:
-      - .:/app
     depends_on:
       - db
+    env_file:
+      - .env
     environment:
       RAILS_ENV: development
-      DB_HOST: db
-      DB_USERNAME: postgres
-      DB_PASSWORD: password
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
   db:
     image: postgres
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+    env_file:
+      - .env
+    restart: always
     volumes:
       - ./shared/pg_data:/var/lib/postgresql/data
+  redis:
+    image: redis
+    volumes:
+      - redis_data:/data
+
+volumes:
+  bundle:
+  redis_data:

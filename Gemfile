@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.1.2"
+ruby "3.2.2"
 
 gem "camaleon_cms", '>= 2.4.3'
 
@@ -52,6 +52,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+  gem 'rspec-rails', '~> 6.0.0'
 end
 
 group :development do
@@ -73,9 +74,9 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "dotenv-rails", "~> 2.8"
+gem 'dotenv-rails', groups: [:development, :test]
 
 
-#################### Camaleon CMS include all gems for plugins and themes #################### 
+################### Camaleon CMS include all gems for plugins and themes #################### 
 # require_relative './lib/plugin_routes' 
 # instance_eval(PluginRoutes.draw_gems)
