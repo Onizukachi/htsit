@@ -12,7 +12,6 @@ services:
     environment:
       RAILS_ENV: development
     stdin_open: true
-    tty: true
     volumes:
       - .:/app
       - bundle:/usr/local/bundle
@@ -22,6 +21,8 @@ services:
       - "5433:5432"
     env_file:
       - .env
+    environment:
+      POSTGRES_DB: htsit_development
     restart: always
     volumes:
       - ./shared/pg_data:/var/lib/postgresql/data
@@ -29,6 +30,8 @@ services:
     image: redis
     volumes:
       - redis_data:/data
+    depends_on:
+      - db
 
 volumes:
   bundle:
