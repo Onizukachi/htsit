@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+ruby "3.1.0"
 
 gem "camaleon_cms", '>= 2.4.3'
 
