@@ -4,8 +4,12 @@ ruby "3.1.0"
 
 gem "camaleon_cms", '>= 2.4.3'
 
+gem 'sidekiq'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.1"
+
+gem 'rmagick'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -53,6 +57,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
   gem 'rspec-rails', '~> 6.0.0'
+  gem 'byebug'
 end
 
 group :development do

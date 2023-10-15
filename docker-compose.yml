@@ -5,34 +5,65 @@ services:
     build: .
     ports:
       - "3000:3000"
-    depends_on:
-      - db
     env_file:
-      - .env
+      - .env.development
     environment:
       RAILS_ENV: development
     stdin_open: true
     volumes:
       - .:/app
       - bundle:/usr/local/bundle
+    depends_on:
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
   db:
     image: postgres
     ports:
       - "5433:5432"
     env_file:
-      - .env
+      - .env.development
     environment:
       POSTGRES_DB: htsit_development
     restart: always
     volumes:
       - ./shared/pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready -U postgres
+      interval: 2s
+      timeout: 5s
+      retries: 30
   redis:
-    image: redis
+    image: 'redis:alpine'
+    command: redis-server
+    ports:
+      - "6378:6379"
     volumes:
       - redis_data:/data
     depends_on:
       - db
-
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq
+    depends_on:
+      - redis
+      - db
+      - app
+    env_file:
+      - .env.development
+    environment:
+      RAILS_ENV: development
+    entrypoint: ./entrypoints/sidekiq-entrypoint.sh
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+    
 volumes:
   bundle:
   redis_data:

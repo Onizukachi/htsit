@@ -16,7 +16,9 @@ RUN --mount=type=cache,target=/var/cache/apt \
     libpq-dev \
     postgresql-client \
     libvips \
-    curl
+    curl \
+    libmagickwand-dev \
+    imagemagick
 
 WORKDIR /app
 
@@ -28,10 +30,11 @@ RUN bundle check || bundle install --jobs 20 --retry 5
 
 COPY . .
 
-RUN chmod +x ./dev-docker-entrypoint.sh
+RUN chmod +x ./entrypoints/docker-entrypoint.sh 
+RUN chmod +x ./entrypoints/sidekiq-entrypoint.sh
 
 # Run migrations
-ENTRYPOINT ["./dev-docker-entrypoint.sh"]
+ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]
 
 EXPOSE 3000
 
