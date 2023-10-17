@@ -13,4 +13,18 @@
  *= require ./wpbase
  *= require ./magnific-ver
  *= require ./style-ver
+ *
+ *= require ./style
+ *= require ./image
+ *= require ./theme
+ *= require ./social-links
+ *= require ./cover
+ *= require ./button
+ *= require ./columns
+ *= require ./library
+ *= require ./core-block-supports
+ *= require ./contact-form
+ *= require ./bizboost-theme
+ *= require ./newsletter-plugin
+ *= require ./popup-maker
  */
