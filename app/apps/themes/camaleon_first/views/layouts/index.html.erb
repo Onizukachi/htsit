@@ -22,12 +22,12 @@
     <script src="js/jquery.min.js" id="jquery-core-js"></script>
     <script src="js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
     <script src="js/captcha.js" defer=""></script>
-    <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
+    <%# <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
     <link
       rel="prefetch"
       as="script"
       href="https://smartcaptcha.yandexcloud.net/shield.92b352a1c535daccf62d.chunk.js"
-    />
+    /> %>
 </head>
 <body class="<%= is_home? ? "home-page" : "inner-page" %>">
     <!-- <header>
@@ -534,10 +534,6 @@
                   </span>
                 </label>
               </p>
-              <div style="height: 100px"
-                  id="captcha-container"
-                  class="smart-captcha"
-                  data-sitekey="ysc1_oLawtS28qfoME9sTvdZtW625Nm4MBL215nufQ2oN123ff5b9"></div>
               <p>
                 <input
                   class="wpcf7-form-control wpcf7-submit has-spinner"
