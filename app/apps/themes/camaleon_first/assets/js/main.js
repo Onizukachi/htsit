@@ -16,3 +16,4 @@
 //= require ./magnific.min
 //= require ./hover.zoom
 //= require ./main-ver
+// = require ./new-captcha
