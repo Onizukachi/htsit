@@ -21,12 +21,10 @@
 
     <script src="js/jquery.min.js" id="jquery-core-js"></script>
     <script src="js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
-    <script src="js/captcha.js" defer=""></script>
-    <link
-      rel="prefetch"
-      as="script"
-      href="https://smartcaptcha.yandexcloud.net/shield.92b352a1c535daccf62d.chunk.js"
-    />
+    <script
+      src="https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=smartCaptchaInit"
+      defer
+    ></script>
 </head>
 <body class="<%= is_home? ? "home-page" : "inner-page" %>">
     <!-- <header>
@@ -533,9 +531,12 @@
                   </span>
                 </label>
               </p>
+              <div id="captcha-container"></div>
               <p>
                 <input
                   class="wpcf7-form-control wpcf7-submit has-spinner"
+                  id="smartcaptcha-demo-submit"
+                  disabled="1"
                   type="submit"
                   value="Отправить"
                 /><span class="wpcf7-spinner"></span>
