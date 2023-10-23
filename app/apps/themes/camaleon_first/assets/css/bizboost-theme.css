@@ -2107,7 +2107,7 @@ footer > * + * {
 -------------------------------------------------------- */
 .wp-block-section {
   padding-bottom: var(--wp--custom--spacing--section-block-top);
-  padding-top: 0;
+  padding-top: var(--wp--custom--spacing--section-block-top);
 }
 
 /* Paddding Bottom 140px needed for the sections  */

@@ -22,6 +22,13 @@
   .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
     flex-basis: 100% !important;
   }
+  .wp-block-group.has-border-color.has-background-border-color.is-layout-flow.wp-block-group-is-layout-flow {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wp-block-group.has-border-color.has-background-border-color.is-layout-flow.wp-block-group-is-layout-flow > h6 {
+    width: 100%;
+  }
 }
 @media (min-width: 782px) {
   .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {

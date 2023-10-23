@@ -79,7 +79,7 @@ html.pum-open.pum-open-overlay.pum-open-fixed .pum-container {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1999999999;
+  z-index: 10;
   overflow: initial;
   display: none;
   transition: 0.15s ease-in-out;
@@ -100,7 +100,7 @@ html.pum-open.pum-open-overlay.pum-open-fixed .pum-container {
   top: 100px;
   position: absolute;
   margin-bottom: 3em;
-  z-index: 1999999999;
+  z-index: 10;
 }
 .pum-container.pum-responsive {
   left: 50%;
@@ -405,10 +405,10 @@ html.pum-open.pum-open-overlay-disabled.pum-open-scrollable
   width: 100%;
   overflow: visible;
 }
-.pika-single,
+/* .pika-single,
 body div#ui-datepicker-div[style] {
   z-index: 9999999999 !important;
-}
+} */
 
 /* Popup Theme 33: Enterprise Blue */
 .pum-theme-33,
@@ -826,5 +826,5 @@ body div#ui-datepicker-div[style] {
 }
 
 #pum-39 {
-  z-index: 1999999999;
+  z-index: 10;
 }
