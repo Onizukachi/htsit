@@ -37,7 +37,7 @@ img.emoji {
 /* site-tagline */
 .wp-block-site-tagline {
   color: var(--wp--preset--color--body-text);
-  font-size: 12px;
+  font-size: var(--wp--preset--font-size--extra-small);
   font-weight: 300;
   margin-top: 0;
 }
@@ -118,6 +118,8 @@ p {
 ol,
 ul {
   box-sizing: border-box;
+  list-style: circle;
+  padding-left: 6%;
 }
 ol.has-background,
 ul.has-background {

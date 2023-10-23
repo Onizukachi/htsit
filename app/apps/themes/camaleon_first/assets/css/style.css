@@ -106,7 +106,7 @@ body {
   --wp--preset--font-size--tiny: 13px;
   --wp--preset--font-size--extra-small: 14px;
   --wp--preset--font-size--upper-heading: 18px;
-  --wp--preset--font-size--normal: clamp(18px, 1.6vw, 20px);
+  --wp--preset--font-size--normal: clamp(14px, 1.6vw, 16px);
   --wp--preset--font-size--content-heading: clamp(22px, 3vw, 24px);
   --wp--preset--font-size--extra-large: clamp(28px, 6vw, 36px);
   --wp--preset--font-size--product-heading: clamp(32px, 4.8vw, 42px);
@@ -275,6 +275,9 @@ body .is-layout-flex {
   flex-wrap: wrap;
   align-items: center;
 }
+body header .is-layout-flex {
+  flex-wrap: nowrap;
+}
 body .is-layout-flex > * {
   margin: 0;
 }
@@ -303,6 +306,7 @@ a:where(:not(.wp-element-button)) {
 h1 {
   font-size: var(--wp--custom--typography--font-size--heading-one);
   line-height: var(--wp--custom--typography--line-height--heading-one);
+  letter-spacing: -0.5px;
 }
 h2 {
   font-size: var(--wp--custom--typography--font-size--heading-two);
@@ -682,4 +686,10 @@ h6 {
 }
 body {
   --wp--preset--duotone--grayscale: url(#wp-duotone-grayscale);
+}
+@media (min-width: 781px) {
+  h1 {
+    font-size: 80px; 
+    text-transform: none
+  }
 }

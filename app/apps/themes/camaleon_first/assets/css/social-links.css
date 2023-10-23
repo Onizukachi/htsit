@@ -248,10 +248,10 @@
 .wp-block-social-links.is-style-logos-only .wp-social-link a {
   padding: 0;
 }
-.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+/* .wp-block-social-links.is-style-logos-only .wp-social-link svg {
   height: 1.25em;
   width: 1.25em;
-}
+} */
 .wp-block-social-links.is-style-logos-only .wp-social-link-amazon {
   color: #f90;
 }
