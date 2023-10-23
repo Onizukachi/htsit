@@ -14,7 +14,6 @@
  *= require ./magnific-ver
  *= require ./style-ver
  *
- *= require ./style
  *= require ./image
  *= require ./theme
  *= require ./social-links
@@ -27,4 +26,5 @@
  *= require ./bizboost-theme
  *= require ./newsletter-plugin
  *= require ./popup-maker
+ *= require ./style
  */
